@@ -49,10 +49,6 @@ async function getApiProfile(userId) {
   return { user, posts };
 }
 
-function getWebProfile(email) {
-  return User.findOne({ email }).populate("posts");
-}
-
 module.exports = {
   findUserByEmail,
   createUser,
@@ -60,5 +56,4 @@ module.exports = {
   createToken,
   setAuthCookie,
   getApiProfile,
-  getWebProfile,
 };

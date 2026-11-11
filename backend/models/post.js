@@ -40,29 +40,7 @@ const postSchema = new mongoose.Schema(
         ref: "User",
       },
     ],
-
-    // Comments on post
-    comments: [
-      {
-        user: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "User",
-          required: true,
-        },
-
-        text: {
-          type: String,
-          required: true,
-          maxlength: 500,
-        },
-
-        createdAt: {
-          type: Date,
-          default: Date.now,
-        },
-      },
-    ],
-
+    
     // Hashtags
     hashtags: [
       {

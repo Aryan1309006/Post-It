@@ -24,18 +24,6 @@ async function createApiPost(postData, userId) {
   return post;
 }
 
-async function createWebPost(user, postData) {
-  const post = await postModel.create(postData);
-  user.posts.push(post._id);
-  await user.save();
-  return post;
-}
-
-async function save(post) {
-  await post.save();
-  return post;
-}
-
 async function saveWithUser(post) {
   await post.save();
   await post.populate("user", "name email");
@@ -72,8 +60,6 @@ module.exports = {
   findById,
   findByIdWithUser,
   createApiPost,
-  createWebPost,
-  save,
   saveWithUser,
   deletePost,
   toggleLike,

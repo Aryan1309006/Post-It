@@ -14,17 +14,4 @@ function requireApiLogin(req, res, next) {
   }
 }
 
-function isLoggedin(req, res, next) {
-  if (!req.cookies.token || req.cookies.token === "") {
-    return res.redirect("/login");
-  }
-
-  try {
-    req.user = jwt.verify(req.cookies.token, process.env.JWT_SECRET);
-    next();
-  } catch (err) {
-    return res.redirect("/login");
-  }
-}
-
-module.exports = { requireApiLogin, isLoggedin };
+module.exports = { requireApiLogin };

@@ -1,4 +1,4 @@
-const authService = require("../services/authService");
+const authService = require("../services/auth.service");
 
 async function me(req, res) {
   const result = await authService.getApiProfile(req.user.userid);

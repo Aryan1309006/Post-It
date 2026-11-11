@@ -1,4 +1,4 @@
-const postService = require("../services/postService");
+const postService = require("../services/post.service");
 
 async function explore(req, res) {
   const posts = await postService.getExplorePosts(req.user.userid);
@@ -25,7 +25,7 @@ async function create(req, res) {
 
   const postData = { user: req.user.userid, content };
   if (req.file) {
-    postData.imageUrl = `/uploads/${req.file.filename}`;
+    postData.imageUrl = req.file.path;
   }
 
   const post = await postService.createApiPost(postData, req.user.userid);
@@ -49,7 +49,7 @@ async function update(req, res) {
     post.content = content;
   }
   if (req.file) {
-    post.imageUrl = `/uploads/${req.file.filename}`;
+    post.imageUrl = req.file.path;
   }
 
   await postService.saveWithUser(post);
