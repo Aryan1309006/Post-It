@@ -1,0 +1,24 @@
+{
+  "name": "post-it",
+  "version": "1.0.0",
+  "description": "Post-It is split into an Express/MongoDB backend and a React frontend styled with Tailwind CSS.",
+  "main": "index.js",
+  
+  "scripts": {
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend"
+  }
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aryan1309006/Post-It.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aryan1309006/Post-It/issues"
+  },
+  "homepage": "https://github.com/Aryan1309006/Post-It#readme"
+}
